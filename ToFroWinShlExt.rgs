@@ -1,0 +1,36 @@
+HKCR
+{
+	ToFroWin.ToFroWinShlExt.1 = s 'ToFroWinShlExt Class'
+	{
+		CLSID = s '{0FDEEA60-1DA5-4930-83A8-5A75CAD2BBE1}'
+	}
+	ToFroWin.ToFroWinShlExt = s 'ToFroWinShlExt Class'
+	{
+		CLSID = s '{0FDEEA60-1DA5-4930-83A8-5A75CAD2BBE1}'
+		CurVer = s 'ToFroWin.ToFroWinShlExt.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {0FDEEA60-1DA5-4930-83A8-5A75CAD2BBE1} = s 'ToFroWinShlExt Class'
+		{
+			ProgID = s 'ToFroWin.ToFroWinShlExt.1'
+			VersionIndependentProgID = s 'ToFroWin.ToFroWinShlExt'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			'TypeLib' = s '{F4BB6D0A-5262-4342-B40A-D77BCF3C003A}'
+		}
+	}
+	NoRemove *
+	{
+		NoRemove ShellEx
+		{
+			NoRemove ContextMenuHandlers
+			{
+				ForceRemove ToFroWinExt = s '{0FDEEA60-1DA5-4930-83A8-5A75CAD2BBE1}'
+			}
+		}
+	}
+}

@@ -1,0 +1,38 @@
+// ToFroWin.idl : IDL source for ToFroWin.dll
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (ToFroWin.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+	[
+		object,
+		uuid(81D748F0-3A27-45FF-88F9-178354D9BD69),
+		dual,
+		helpstring("IToFroWinShlExt Interface"),
+		pointer_default(unique)
+	]
+	interface IToFroWinShlExt : IDispatch
+	{
+	};
+
+[
+	uuid(F4BB6D0A-5262-4342-B40A-D77BCF3C003A),
+	version(1.0),
+	helpstring("ToFroWin 1.0 Type Library")
+]
+library TOFROWINLib
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+	[
+		uuid(0FDEEA60-1DA5-4930-83A8-5A75CAD2BBE1),
+		helpstring("ToFroWinShlExt Class")
+	]
+	coclass ToFroWinShlExt
+	{
+		[default] interface IToFroWinShlExt;
+	};
+};

@@ -1,0 +1,1 @@
+@upx --best --crp-ms=999999 --nrv2d --overlay=strip --strip-relocs=0 ToFroWin.dll
